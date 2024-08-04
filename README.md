@@ -1,35 +1,47 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C6 | ESP32-H2 | ESP32-P4 | ESP32-S2 | ESP32-S3 |
-| ----------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+# Smart Dimmer Controlled by Mobile App
 
-# _Sample project_
+This project involves the development of a smart dimmer using an ESP32 microcontroller, which can be controlled via a mobile app. The smart dimmer allows users to adjust the brightness of a connected light remotely through WiFi communication.
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
+### Requirements
+- [ESP IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
+- [Android Studio](https://developer.android.com/studio/)
+- [Volley Library](https://github.com/google/volley)
 
-This is the simplest buildable example. The example is used by command `idf.py create-project`
-that copies the project to user specified path and set it's name. For more information follow the [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project)
+### Materials
+
+The list of components used in this project are listed below:
+
+- 1x ESP32 microcontroller
+- 1x TRIAC
+- 1x 4N25 optocoupler
+- 1x MOC3021 optocoupler
+- 1x transformer
+- 4x diodes
+- 2x 100 Ω resistors
+- 1x 330 Ω resistor
+- 1x 10K Ω resistor
+
+![Prototype Working on Breadboard](http://workabotic.com/public/images/smart-dimmer-controlled-by-mobile-app/complete%20prototype_working_on_the_breadboard.gif)
 
 
+### Overview
 
-## How to use example
-We encourage the users to use the example as a template for the new projects.
-A recommended way is to follow the instructions on a [docs page](https://docs.espressif.com/projects/esp-idf/en/latest/api-guides/build-system.html#start-a-new-project).
+Key components and their functions include:
 
-## Example folder contents
+- A transformer reduces power voltage to 12 V AC, with a bridge rectifier converting it to 6 V DC.
+- The 4N25 optocoupler provides zero-crossing detection and electrical isolation between the microcontroller and low voltage DC side.
+- A 10k pull-up resistor ensures stable logic levels, while other resistors limit current and protect components.
+- The MOC3021 optocoupler interfaces with the TRIAC, enabling the ESP32 to trigger the high voltage TRIAC safely.
 
-The project **sample_project** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
+In summary, the ESP32 receives zero-crossing signals from the 4N25 optocoupler, using this reference to calculate the trigger timing for the TRIAC via the MOC3021, thereby controlling dimming operations. The complete circuit schematic is shown below.
 
-ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt`
-files that provide set of directives and instructions describing the project's source files and targets
-(executable, library, or both). 
+![Complete Circuit Schematic](http://workabotic.com/public/images/smart-dimmer-controlled-by-mobile-app/complete_circuit_schematic.webp)
 
-Below is short explanation of remaining files in the project folder.
 
-```
-├── CMakeLists.txt
-├── main
-│   ├── CMakeLists.txt
-│   └── main.c
-└── README.md                  This is the file you are currently reading
-```
-Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
-They are not used or needed when building with CMake and idf.py.
+### Documentation
+
+For detailed documentation, including the schematic, firmware code, and mobile app source, refer to the project website: [Smart Dimmer Controlled by Mobile App](http://workabotic.com/2024/smart-dimmer-controlled-by-mobile-app/).
+
+### Contributing
+
+Contributions are welcome! Please fork the repository and submit pull requests for any improvements or bug fixes.
