@@ -2,6 +2,8 @@
 
 This project involves the development of a smart dimmer using an ESP32 microcontroller, which can be controlled via a mobile app. The smart dimmer allows users to adjust the brightness of a connected light remotely through WiFi communication.
 
+![Prototype Working on Breadboard](http://workabotic.com/public/images/smart-dimmer-controlled-by-mobile-app/complete%20prototype_working_on_the_breadboard.gif?raw=true)
+
 ### Requirements
 - [ESP IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
 - [Android Studio](https://developer.android.com/studio/)
@@ -20,9 +22,6 @@ The list of components used in this project are listed below:
 - 2x 100 Ω resistors
 - 1x 330 Ω resistor
 - 1x 10K Ω resistor
-
-![Prototype Working on Breadboard](http://workabotic.com/public/images/smart-dimmer-controlled-by-mobile-app/complete%20prototype_working_on_the_breadboard.gif)
-
 
 ### Overview
 
