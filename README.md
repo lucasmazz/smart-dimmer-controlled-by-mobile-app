@@ -2,6 +2,8 @@
 
 This project involves the development of a smart dimmer using an ESP32 microcontroller, which can be controlled via a mobile app. The smart dimmer allows users to adjust the brightness of a connected light remotely through WiFi communication.
 
+![smart dimmer](https://github.com/user-attachments/assets/ed4ebd4c-18c7-416c-ad27-3deb603a6050)
+
 ### Requirements
 - [ESP IDF](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html)
 - [Android Studio](https://developer.android.com/studio/)
