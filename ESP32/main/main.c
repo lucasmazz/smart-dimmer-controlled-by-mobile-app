@@ -9,18 +9,18 @@
 #include "lwip/err.h"
 #include "nvs_flash.h"
 
-/* Wifi Config */
+/* Wi-fi Config */
 #define WIFI_SSID "DIMMER"
 #define WIFI_PASS "password"
 #define WIFI_CHANNEL 1
 #define MAX_STA_CONN 1
 
-/* IP config for the WiFi AP */
+/* IP config for the Wi-Fi AP */
 #define STATIC_IP_ADDR "192.168.1.1"
 #define GATEWAY_ADDR "192.168.1.1"
 #define NETMASK_ADDR "255.255.255.0"
 
-/* Interruption and GPIO */
+/* Interrupt and GPIO */
 #define ESP_INTR_FLAG_DEFAULT 0
 #define INPUT_PIN GPIO_NUM_27
 #define OUTPUT_PIN GPIO_NUM_33
@@ -34,7 +34,7 @@ static uint64_t falling_time = 0;
 static uint64_t zero_crossing_time = 0;
 static uint64_t trigger_time = 0;
 
-/* Powergrid sine period in us */
+/* Power grid sine period in us */
 static uint16_t period = 0;
 
 /* Brightness intensity in percentage */
